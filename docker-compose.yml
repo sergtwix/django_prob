@@ -3,8 +3,10 @@ version: '3'
 services:
   web:
     build: ./web
-    command: python manage.py runserver 0.0.0.0:8000
+
     volumes:
-      - .:/Serg_site
+      - ./Serg_site:/Serg_site
     ports:
       - '8000:8000'
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"

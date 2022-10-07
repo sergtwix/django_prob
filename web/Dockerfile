@@ -1,7 +1,7 @@
 FROM python:3.10-alpine
 
 ENV PYTHONUNBUFFERED 1
-
+ENV PIP_ROOT_USER_ACTION=ignore
 #RUN python -m pip install --upgrade pip
 
 #COPY requirements.txt requirements.txt
