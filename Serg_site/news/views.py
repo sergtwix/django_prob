@@ -10,3 +10,7 @@ def index(request):
 def test(request):
     print(request)
     return HttpResponse('<h1>Сторінка ТЕСТ</h1>')
+
+def test2(request):
+    print(request)
+    return HttpResponse('<h1>ТЕСТ2</h1><br><h1>ТЕСТ2</h1>')
