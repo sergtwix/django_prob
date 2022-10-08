@@ -5,3 +5,8 @@ from django.http import HttpResponse
 def index(request):
     print(request)
     return HttpResponse('Hlow World')
+
+
+def test(request):
+    print(request)
+    return HttpResponse('<h1>Сторінка ТЕСТ</h1>')
