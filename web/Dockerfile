@@ -15,5 +15,5 @@ ENV PIP_ROOT_USER_ACTION=ignore
 RUN mkdir /Serg_site
 WORKDIR /Serg_site
 COPY requirements.txt /Serg_site/
-RUN pip install --upgrade pip && pip install --upgrade setuptools && pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install --upgrade setuptools && pip install ez_setup && pip install -r requirements.txt
 ADD . /Serg_site/
