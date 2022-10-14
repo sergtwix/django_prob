@@ -15,5 +15,11 @@ ENV PIP_ROOT_USER_ACTION=ignore
 RUN mkdir /Serg_site
 WORKDIR /Serg_site
 COPY requirements.txt /Serg_site/
-RUN pip install --upgrade pip && pip install --upgrade setuptools && pip install ez_setup && pip install python3-dev default-libmysqlclient-dev build-essential && pip install mysql-client libssl-dev && pip install -r requirements.txt
+
+RUN apt-get update \
+    && apt-get --yes --no-install-recommends install \
+        python3-dev default-libmysqlclient-dev build-essential \
+        mysql-client libssl-dev \
+
+RUN pip install --upgrade pip && pip install --upgrade setuptools && pip install ez_setup && pip install -r requirements.txt
 ADD . /Serg_site/
