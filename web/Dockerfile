@@ -12,17 +12,7 @@ ENV PIP_ROOT_USER_ACTION=ignore
 #WORKDIR /proj_prob
 
 #COPY ./proj_prob /proj_prob
-
-RUN mkdir /Serg_site
-WORKDIR /Serg_site
-COPY requirements.txt /Serg_site/
-
-# RUN apt-get update \
-#     && apt-get --yes --no-install-recommends install \
-#         python3-dev default-libmysqlclient-dev build-essential \
-#         mysql-client libssl-dev \
-
-RUN apt-get update \
+UN apt-get update \
     && apt-get --yes --no-install-recommends install \
         locales tzdata ca-certificates sudo \
         bash-completion iproute2 tar unzip curl rsync vim nano tree \
@@ -40,5 +30,16 @@ RUN apt-get update \
         libssl-dev libffi-dev \
     && rm -rf /var/lib/apt/lists/*
 
+
+RUN mkdir /Serg_site
+WORKDIR /Serg_site
+COPY requirements.txt /Serg_site/
+
+# RUN apt-get update \
+#     && apt-get --yes --no-install-recommends install \
+#         python3-dev default-libmysqlclient-dev build-essential \
+#         mysql-client libssl-dev \
+
+R
 RUN pip install --upgrade pip && pip install --upgrade setuptools && pip install ez_setup && pip install -r requirements.txt
 ADD . /Serg_site/
