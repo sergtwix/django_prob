@@ -22,9 +22,7 @@ COPY requirements.txt /Serg_site/
 #         python3-dev default-libmysqlclient-dev build-essential \
 #         mysql-client libssl-dev \
 
-RUN echo "locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8" | debconf-set-selections \
-    && echo "locales locales/default_environment_locale select en_US.UTF-8" | debconf-set-selections \
-    && apt-get update \
+RUN apt-get update \
     && apt-get --yes --no-install-recommends install \
         locales tzdata ca-certificates sudo \
         bash-completion iproute2 tar unzip curl rsync vim nano tree \
