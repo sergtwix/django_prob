@@ -12,7 +12,8 @@ ENV PIP_ROOT_USER_ACTION=ignore
 #WORKDIR /proj_prob
 
 #COPY ./proj_prob /proj_prob
-RUN apt-get update \
+
+RUN apt update \
     && apt-get --yes --no-install-recommends install \
         locales tzdata ca-certificates sudo \
         bash-completion iproute2 tar unzip curl rsync vim nano tree \
@@ -21,7 +22,7 @@ ENV LANG en_US.UTF-8
 
 
 # Install Python stack
-RUN apt-get update \
+RUN apt update \
     && apt-get --yes --no-install-recommends install \
         python3 python3-dev \
         python3-pip python3-venv python3-wheel python3-setuptools \
