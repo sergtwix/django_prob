@@ -1,5 +1,5 @@
 FROM python:3.10.8-buster
-USER root
+
 ENV PYTHONUNBUFFERED 1
 ENV PIP_ROOT_USER_ACTION=ignore
 
