@@ -1,4 +1,4 @@
-FROM python:3.10-alpine
+FROM python:3.10.8-buster
 USER root
 ENV PYTHONUNBUFFERED 1
 ENV PIP_ROOT_USER_ACTION=ignore
@@ -13,23 +13,7 @@ ENV PIP_ROOT_USER_ACTION=ignore
 
 #COPY ./proj_prob /proj_prob
 
-RUN sudo apt-get update \
-    && apt-get --yes --no-install-recommends install \
-        locales tzdata ca-certificates sudo \
-        bash-completion iproute2 tar unzip curl rsync vim nano tree \
-    && rm -rf /var/lib/apt/lists/*
-ENV LANG en_US.UTF-8
 
-
-# Install Python stack
-RUN sudo apt-get update \
-    && apt-get --yes --no-install-recommends install \
-        python3 python3-dev \
-        python3-pip python3-venv python3-wheel python3-setuptools \
-        build-essential cmake \
-        graphviz git openssh-client \
-        libssl-dev libffi-dev \
-    && rm -rf /var/lib/apt/lists/*
 
 
 RUN mkdir /Serg_site
