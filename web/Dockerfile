@@ -26,5 +26,5 @@ COPY requirements.txt /Serg_site/
 #         mysql-client libssl-dev \
 
 
-RUN pip install --upgrade pip && pip install --upgrade setuptools && pip install ez_setup && pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install --upgrade setuptools && pip install ez_setup && pip install Pillow && pip install -r requirements.txt
 ADD . /Serg_site/
